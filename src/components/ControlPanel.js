@@ -7,11 +7,18 @@ const ControlPanelContainer = styled.div`
     height: 25%;
 `
 
+const ControlPanelButton = styled.button`
+    width: fit-content;
+    height: 100%;
+    background-color: green;
+`
+
 export default class ControlPanel extends Component {
   render() {
     return (
       <ControlPanelContainer>
         <p>ControlPanel</p>
+        <ControlPanelButton value="Select Files">SelectFiles</ControlPanelButton>
       </ControlPanelContainer>
     )
   }
