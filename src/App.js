@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {createStore} from 'redux';
-
+import HTML5Backend from 'react-dnd-html5-backend'
+import { DragDropContext } from 'react-dnd'
 
 import ControlPanel from './components/ControlPanel'
+import DragArea from './components/DragArea'
 
 import logo from './logo.svg';
 import './App.css';
@@ -12,9 +13,10 @@ class App extends Component {
     return (
       <div className="App">
       <ControlPanel/>
+      <DragArea />
       </div>
     );
   }
 }
 
-export default App;
+export default DragDropContext(HTML5Backend)(App);
