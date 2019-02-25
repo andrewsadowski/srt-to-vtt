@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { DragSource } from 'react-dnd';
-
+import React, { Component } from "react";
+import { DragSource, DragTarget } from "react-dnd";
 
 export default class DragArea extends Component {
   render() {
@@ -8,6 +7,6 @@ export default class DragArea extends Component {
       <div>
         <p>DragArea</p>
       </div>
-    )
+    );
   }
 }
