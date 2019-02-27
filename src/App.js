@@ -5,9 +5,6 @@ import { DragDropContext } from 'react-dnd'
 import ControlPanel from './components/ControlPanel'
 import DragArea from './components/DragArea'
 
-import logo from './logo.svg';
-import './App.css';
-
 class App extends Component {
   render() {
     return (
