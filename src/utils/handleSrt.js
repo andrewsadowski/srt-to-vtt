@@ -25,3 +25,22 @@ export const processFile = filePath => {
     }
   });
 };
+
+/**
+ *
+ * @param {string} outputNameAndPath - Path and Name of output
+ * @param {object} subtitle - Object consisting of updated subtitle file
+ */
+export const writeSubToFile = (outputNameAndPath, subtitle) => {
+  return new Promise((resolve, reject) => {
+    if (outputNameAndPath && subtitle) {
+      resolve(
+        fs.writeFile(outputNameAndPath, subtitle, err => {
+          if (err) return console.log(err);
+        })
+      );
+    } else {
+      reject(Error);
+    }
+  });
+};
