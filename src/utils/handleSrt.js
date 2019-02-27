@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const srt2vtt = require('srt2vtt');
 
 /**
