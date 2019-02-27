@@ -44,3 +44,18 @@ export const writeSubToFile = (outputNameAndPath, subtitle) => {
     }
   });
 };
+
+
+/**
+ *
+ * @param {string} inputPath - Path to directory of srts
+ */
+export const handleDirOfSubs = inputPath => {
+  const dirArr = fs.readdirSync(inputPath);
+  const dirPath = inputPath;
+  dirArr.forEach(file => {
+    let filePath = path.join(dirPath, file);
+    // handle file handling here:
+  });
+  return dirArr;
+};
