@@ -11,6 +11,14 @@ srt2vtt(srtData, function(err, vttData) {
 });
  */
 
+ export const processSrtToVtt = (filePath) => {
+   return async () => {
+     const srt = await processFile(filePath)
+     const VTT = await srt2vtt(srt);
+     return VTT;
+   }
+ }
+
  /**
  *
  * @param {string} filePath - path to srt file
