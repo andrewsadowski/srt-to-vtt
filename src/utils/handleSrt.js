@@ -15,24 +15,34 @@ srt2vtt(srtData, function(err, vttData) {
   * 
   * @param {string} filePath 
   */
- export const processSrtToVtt = (filePath) => {
-   return async () => {
-     const srt = await processFile(filePath)
-     const VTT = await srt2vtt(srt);
+const processSrtToVtt = async (filePath) => {
+   try {
+    //  const srt = await processFile(filePath)
+    const srt = fs.readFileSync(filePath)
+     console.log(srt)
+     const VTT = srt2vtt(srt, (err, vttData) => {
+      if (err) throw new Error(err);
+      console.log(vttData.toString());
+     });
+     console.log(VTT)
      return VTT;
-   }
+   } catch (Error) {
+     console.log(Error)
+   } 
  }
 
  /**
  *
  * @param {string} filePath - path to srt file
  */
-export const processFile = filePath => {
+const processFile = filePath => {
   return new Promise((resolve, reject) => {
-    if (filePath) {
-      const srt = fs.readFileSync(filePath, 'utf-8');
-      resolve(srt);
-    } else {
+    try {
+      if (filePath) {
+        const srt = fs.readFileSync(filePath);
+        resolve(srt);
+    }
+    } catch (Error) {
       reject(Error);
     }
   });
@@ -43,7 +53,7 @@ export const processFile = filePath => {
  * @param {string} outputNameAndPath - Path and Name of output
  * @param {object} subtitle - Object consisting of updated subtitle file
  */
-export const writeSubToFile = (outputNameAndPath, subtitle) => {
+const writeSubToFile = (outputNameAndPath, subtitle) => {
   return new Promise((resolve, reject) => {
     if (outputNameAndPath && subtitle) {
       resolve(
@@ -62,7 +72,7 @@ export const writeSubToFile = (outputNameAndPath, subtitle) => {
  *
  * @param {string} inputPath - Path to directory of srts
  */
-export const handleDirOfSubs = inputPath => {
+const handleDirOfSubs = inputPath => {
   const dirArr = fs.readdirSync(inputPath);
   const dirPath = inputPath;
   dirArr.forEach(file => {
@@ -71,3 +81,4 @@ export const handleDirOfSubs = inputPath => {
   });
   return dirArr;
 };
+console.log(processSrtToVtt('/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt'))
