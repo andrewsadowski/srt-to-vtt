@@ -11,6 +11,10 @@ srt2vtt(srtData, function(err, vttData) {
 });
  */
 
+ /**
+  * 
+  * @param {string} filePath 
+  */
  export const processSrtToVtt = (filePath) => {
    return async () => {
      const srt = await processFile(filePath)
