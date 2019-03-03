@@ -9,7 +9,12 @@ const isDev = require("electron-is-dev");
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 500, height: 500 });
+  mainWindow = new BrowserWindow({
+    width: 430,
+    height: 445,
+    titleBarStyle: "hidden",
+    resizable: false
+  });
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"

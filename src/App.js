@@ -9,8 +9,9 @@ import DragArea from "./components/DragArea";
 
 const AppContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 `;
 
 class App extends Component {
