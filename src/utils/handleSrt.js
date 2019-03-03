@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const srt2vtt = require('srt2vtt');
+const fs = require("fs");
+const path = require("path");
+const srt2vtt = require("srt2vtt");
 
 /**
  * how to run srt2vtt lib
@@ -11,27 +11,27 @@ srt2vtt(srtData, function(err, vttData) {
 });
  */
 
- /**
-  * 
-  * @param {string} filePath 
-  */
-const processSrtToVtt = async (filePath) => {
-   try {
+/**
+ *
+ * @param {string} filePath
+ */
+const processSrtToVtt = async filePath => {
+  try {
     //  const srt = await processFile(filePath)
-    const srt = fs.readFileSync(filePath)
-     console.log(srt)
-     const VTT = srt2vtt(srt, (err, vttData) => {
+    const srt = fs.readFileSync(filePath);
+    console.log(srt);
+    const VTT = srt2vtt(srt, (err, vttData) => {
       if (err) throw new Error(err);
       console.log(vttData.toString());
-     });
-     console.log(VTT)
-     return VTT;
-   } catch (Error) {
-     console.log(Error)
-   } 
- }
+    });
+    console.log(VTT);
+    return VTT;
+  } catch (Error) {
+    console.log(Error);
+  }
+};
 
- /**
+/**
  *
  * @param {string} filePath - path to srt file
  */
@@ -41,7 +41,7 @@ const processFile = filePath => {
       if (filePath) {
         const srt = fs.readFileSync(filePath);
         resolve(srt);
-    }
+      }
     } catch (Error) {
       reject(Error);
     }
@@ -67,7 +67,6 @@ const writeSubToFile = (outputNameAndPath, subtitle) => {
   });
 };
 
-
 /**
  *
  * @param {string} inputPath - Path to directory of srts
@@ -81,4 +80,8 @@ const handleDirOfSubs = inputPath => {
   });
   return dirArr;
 };
-console.log(processSrtToVtt('/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt'))
+console.log(
+  processSrtToVtt(
+    "/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt"
+  )
+);
