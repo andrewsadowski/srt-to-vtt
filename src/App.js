@@ -3,6 +3,7 @@ import HTML5Backend from "react-dnd-html5-backend";
 import { DragDropContext } from "react-dnd";
 import styled from "styled-components";
 
+import Header from "./components/Header";
 import ControlPanel from "./components/ControlPanel";
 import DragArea from "./components/DragArea";
 
@@ -16,6 +17,7 @@ class App extends Component {
   render() {
     return (
       <AppContainer>
+        <Header />
         <ControlPanel />
         <DragArea />
       </AppContainer>
