@@ -4,7 +4,7 @@ import { DragDropContext } from "react-dnd";
 import styled from "styled-components";
 
 import Header from "./components/Header";
-import ControlPanel from "./components/ControlPanel";
+// import ControlPanel from "./components/ControlPanel";
 import DragArea from "./components/DragArea";
 
 const AppContainer = styled.div`
@@ -19,7 +19,6 @@ class App extends Component {
     return (
       <AppContainer>
         <Header />
-        <ControlPanel />
         <DragArea />
       </AppContainer>
     );
