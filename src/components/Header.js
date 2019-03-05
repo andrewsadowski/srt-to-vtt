@@ -5,11 +5,15 @@ const HeaderContainer = styled.div`
   display: flex;
 `;
 
+const HeaderText = styled.h1`
+  font-family: "Exo", sans-serif;
+`;
+
 export default class Header extends Component {
   render() {
     return (
       <HeaderContainer>
-        <h1>srt 2 vtt</h1>
+        <HeaderText>srt △ vtt</HeaderText>
       </HeaderContainer>
     );
   }
