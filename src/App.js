@@ -7,13 +7,6 @@ import Header from "./components/Header";
 // import ControlPanel from "./components/ControlPanel";
 import DragArea from "./components/DragArea";
 
-const AppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
 class App extends Component {
   render() {
     return (
@@ -24,5 +17,12 @@ class App extends Component {
     );
   }
 }
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default DragDropContext(HTML5Backend)(App);
