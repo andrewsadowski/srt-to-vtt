@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { DragSource, DragTarget } from "react-dnd";
 import Dropzone from "react-dnd-dropzone";
 import styled from "styled-components";
 
@@ -10,10 +9,10 @@ export default class DragArea extends Component {
         <Dropzone
           onDrop={files => console.log(files)}
           render={({ canDrop, isOver }) => (
-            <div>
+            <DropZoneContainer>
               Drop file here!
               <pre>{JSON.stringify({ canDrop, isOver })}</pre>
-            </div>
+            </DropZoneContainer>
           )}
         />
       </DropContainer>
@@ -22,7 +21,12 @@ export default class DragArea extends Component {
 }
 
 const DropContainer = styled.div`
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100vh;
   background-color: palegoldenrod;
+`;
+
+const DropZoneContainer = styled.div`
+  width: 100%;
+  height: 100vh;
 `;
