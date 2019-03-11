@@ -13,7 +13,8 @@ function createWindow() {
     width: 430,
     height: 445,
     titleBarStyle: "hidden",
-    resizable: false
+    resizable: false,
+    frame: false
   });
   mainWindow.loadURL(
     isDev
