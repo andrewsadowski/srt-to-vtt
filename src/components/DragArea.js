@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Dropzone from "react-dnd-dropzone";
 import styled from "styled-components";
+import { mapStateToProps } from "redux";
+import { connect } from "react-redux";
 
 export default class DragArea extends Component {
   render() {
@@ -19,6 +21,20 @@ export default class DragArea extends Component {
     );
   }
 }
+
+// const mapStateToProps = (state) => mapStateToProps({
+//   inputFiles,
+//   outputFiles
+// });
+
+// const mapDispatchToProps = dispatch({
+
+// })
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(DragArea);
 
 const DropContainer = styled.div`
   width: 100%;
