@@ -80,8 +80,14 @@ const handleDirOfSubs = inputPath => {
   });
   return dirArr;
 };
-console.log(
-  processSrtToVtt(
-    "/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt"
-  )
-);
+
+module.exports = {
+  handleDirOfSubs,
+  processFile
+};
+
+// console.log(
+//   processSrtToVtt(
+//     "/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt"
+//   )
+// );
