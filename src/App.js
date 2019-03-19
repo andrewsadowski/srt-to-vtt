@@ -35,9 +35,9 @@ const AppContainer = styled.div`
   align-items: center;
 `;
 
-const IosApertureStyled = styled(IosApertureOutline)`
-  height: 250px;
-  width: 250px;
-`;
+// const IosApertureStyled = styled(IosApertureOutline)`
+//   height: 250px;
+//   width: 250px;
+// `;
 
 export default App;
