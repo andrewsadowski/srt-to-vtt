@@ -87,8 +87,8 @@ module.exports = {
   processFile
 };
 
-console.log(
-  processSrtToVtt(
-    "/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt"
-  )
-);
+// console.log(
+//   processSrtToVtt(
+//     "/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt"
+//   )
+// );
