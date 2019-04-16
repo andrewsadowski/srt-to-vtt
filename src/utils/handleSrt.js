@@ -84,7 +84,8 @@ const handleDirOfSubs = inputPath => {
 module.exports = {
   handleDirOfSubs,
   processSrtToVtt,
-  processFile
+  processFile,
+  writeSubToFile
 };
 
 // console.log(
