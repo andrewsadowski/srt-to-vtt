@@ -22,15 +22,6 @@ export default class DragArea extends Component {
   }
 }
 
-// const mapStateToProps = (state) => mapStateToProps({
-//   inputFiles,
-//   outputFiles
-// });
-
-// const mapDispatchToProps = dispatch({
-
-// })
-
 // export default connect(
 //   mapStateToProps,
 //   mapDispatchToProps
