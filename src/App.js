@@ -12,7 +12,7 @@ import Header from "./components/Header";
 // import ControlPanel from "./components/ControlPanel";
 import DragArea from "./components/DragArea";
 
-const store = createStore(rootReducer, composeWithDevTools());
+// const store = createStore(rootReducer, composeWithDevTools());
 
 class App extends Component {
   render() {
