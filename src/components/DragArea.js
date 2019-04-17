@@ -12,7 +12,7 @@ export default class DragArea extends Component {
           onDrop={files => console.log(files)}
           render={({ canDrop, isOver }) => (
             <DropZoneContainer>
-              Drop file here!
+              Drop file here
               <pre>{JSON.stringify({ canDrop, isOver })}</pre>
             </DropZoneContainer>
           )}
