@@ -22,11 +22,6 @@ export default class DragArea extends Component {
   }
 }
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(DragArea);
-
 const DropContainer = styled.div`
   width: 100%;
   height: 100vh;
