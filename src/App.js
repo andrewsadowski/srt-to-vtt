@@ -20,7 +20,6 @@ class App extends Component {
       <Provider>
         <AppContainer>
           <Header />
-          {/* <IosApertureStyled rotate={true} beat={true} /> */}
           <DragArea />
         </AppContainer>
       </Provider>
