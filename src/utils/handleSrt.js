@@ -81,6 +81,20 @@ const handleDirOfSubs = inputPath => {
   return dirArr;
 };
 
+/**
+ *
+ * @param {string} filePath
+ * -- Creates a directory in the location of the srts provided
+ * -- titled VTT_Output
+ */
+const createDefaultOutputDir = filePath => {
+  const dir = path.dirname(filePath);
+  if (!fs.existsSync(path.join(dir, "VTT_Output"))) {
+    fs.mkdirSync(path.join(dir, "VTT_Output"));
+  }
+  return path.join(dir, "VTT_Output");
+};
+
 module.exports = {
   handleDirOfSubs,
   processSrtToVtt,
