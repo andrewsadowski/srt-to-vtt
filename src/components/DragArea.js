@@ -7,7 +7,7 @@ export default class DragArea extends Component {
     return (
       <DropContainer>
         <Dropzone
-          onDrop={files => console.log(files)}
+          onDrop={files => this.props.handleFiles(files)}
           render={({ canDrop, isOver }) => (
             <DropZoneContainer>
               Drop file here
