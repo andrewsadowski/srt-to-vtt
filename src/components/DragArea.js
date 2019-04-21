@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Dropzone from "react-dnd-dropzone";
 import styled from "styled-components";
-// import { mapStateToProps } from "redux";
-// import { connect } from "react-redux";
 
 export default class DragArea extends Component {
   render() {
