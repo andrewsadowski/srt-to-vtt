@@ -23,7 +23,7 @@ export default class DragArea extends Component {
 const DropContainer = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: palegoldenrod;
+  background-color: whitesmoke;
 `;
 
 const DropZoneContainer = styled.div`

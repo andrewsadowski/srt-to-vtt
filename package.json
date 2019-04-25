@@ -39,7 +39,6 @@
     "concurrently": "^4.1.0",
     "electron": "^4.0.5",
     "electron-builder": "^20.38.5",
-    "jest": "^24.7.1",
     "wait-on": "^3.2.0"
   }
 }
