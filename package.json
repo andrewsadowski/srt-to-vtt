@@ -13,6 +13,7 @@
     "react-redux": "^6.0.1",
     "react-scripts": "2.1.5",
     "react-spring": "^8.0.7",
+    "react-triangle": "^0.3.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "srt2vtt": "^1.3.1",

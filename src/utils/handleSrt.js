@@ -15,7 +15,7 @@ srt2vtt(srtData, function(err, vttData) {
  *
  * @param {string} filePath
  */
-const processSrtToVtt = async filePath => {
+export const processSrtToVtt = async filePath => {
   try {
     //  const srt = await processFile(filePath)
     const srt = fs.readFileSync(filePath);
@@ -35,7 +35,7 @@ const processSrtToVtt = async filePath => {
  *
  * @param {string} filePath - path to srt file
  */
-const processFile = filePath => {
+export const processFile = filePath => {
   return new Promise((resolve, reject) => {
     try {
       if (filePath) {
@@ -53,7 +53,7 @@ const processFile = filePath => {
  * @param {string} outputNameAndPath - Path and Name of output
  * @param {object} subtitle - Object consisting of updated subtitle file
  */
-const writeSubToFile = (outputNameAndPath, subtitle) => {
+export const writeSubToFile = (outputNameAndPath, subtitle) => {
   return new Promise((resolve, reject) => {
     if (outputNameAndPath && subtitle) {
       resolve(
@@ -71,7 +71,7 @@ const writeSubToFile = (outputNameAndPath, subtitle) => {
  *
  * @param {string} inputPath - Path to directory of srts
  */
-const handleDirOfSubs = inputPath => {
+export const handleDirOfSubs = inputPath => {
   const dirArr = fs.readdirSync(inputPath);
   const dirPath = inputPath;
   dirArr.forEach(file => {
@@ -87,19 +87,12 @@ const handleDirOfSubs = inputPath => {
  * -- Creates a directory in the location of the srts provided
  * -- titled VTT_Output
  */
-const createDefaultOutputDir = filePath => {
+export const createDefaultOutputDir = filePath => {
   const dir = path.dirname(filePath);
   if (!fs.existsSync(path.join(dir, "VTT_Output"))) {
     fs.mkdirSync(path.join(dir, "VTT_Output"));
   }
   return path.join(dir, "VTT_Output");
-};
-
-module.exports = {
-  handleDirOfSubs,
-  processSrtToVtt,
-  processFile,
-  writeSubToFile
 };
 
 // console.log(
