@@ -29,7 +29,7 @@ const TriangleContainer = styled.div`
   margin: auto;
   text-align: center;
   border: 1px solid white;
-  /* ${ActualTriangle}:hover {
+  ${ActualTriangle}:hover {
     transform: rotate(-180deg);
-  } */
+  }
 `;
