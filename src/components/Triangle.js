@@ -5,7 +5,10 @@ export default class DragTriangle extends Component {
   render() {
     return (
       <TriangleContainer>
-        <ActualTriangle height="500" width="500">
+        <ActualTriangle
+          viewBox="113 128 972 600"
+          preserveAspectRatio="xMidYMid meet"
+        >
           <polygon points="250,60 100,400 400,400" class="triangle" />
         </ActualTriangle>
       </TriangleContainer>
@@ -21,12 +24,12 @@ const ActualTriangle = styled.svg`
 `;
 
 const TriangleContainer = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   margin: auto;
   text-align: center;
   border: 1px solid white;
-  ${ActualTriangle}:hover {
+  /* ${ActualTriangle}:hover {
     transform: rotate(-180deg);
-  }
+  } */
 `;
