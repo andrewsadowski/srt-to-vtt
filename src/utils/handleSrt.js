@@ -19,7 +19,6 @@ export const processSrtToVtt = async filePath => {
   try {
     //  const srt = await processFile(filePath)
     const srt = fs.readFileSync(filePath);
-    console.log(srt);
     const VTT = srt2vtt(srt, (err, vttData) => {
       if (err) throw new Error(err);
       console.log(vttData.toString());
