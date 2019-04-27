@@ -17,7 +17,10 @@ class App extends Component {
         console.log(this.state.files[0].path);
         await processSrtToVtt(this.state.files[0].path);
       } else {
-        //loop over each file, calling processSrtToVtt()
+        this.state.files.map(async file => {
+          console.log(file.path);
+          await processSrtToVtt(file.path);
+        });
       }
       console.log(this.state.files);
     });
