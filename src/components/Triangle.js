@@ -9,7 +9,7 @@ export default class DragTriangle extends Component {
           viewBox="113 128 972 600"
           preserveAspectRatio="xMidYMid meet"
         >
-          <polygon points="250,60 100,400 400,400" class="triangle" />
+          <polygon points="250,60 100,400 400,400" className="triangle" />
         </ActualTriangle>
       </TriangleContainer>
     );
