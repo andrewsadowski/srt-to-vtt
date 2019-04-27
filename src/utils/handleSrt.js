@@ -19,6 +19,8 @@ export const processSrtToVtt = async filePath => {
   try {
     //  const srt = await processFile(filePath)
     const srt = fs.readFileSync(filePath, "utf8");
+    const outputDir = await createDefaultOutputDir(filePath);
+    console.log(outputDir);
     const VTT = srt2vtt(srt, (err, vttData) => {
       if (err) throw new Error(err);
       console.log(vttData.toString());
@@ -100,3 +102,8 @@ export const createDefaultOutputDir = filePath => {
 //     "/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt"
 //   )
 // );
+console.log(
+  createDefaultOutputDir(
+    "/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt"
+  )
+);
