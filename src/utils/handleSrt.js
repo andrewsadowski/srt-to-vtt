@@ -17,34 +17,34 @@ srt2vtt(srtData, function(err, vttData) {
  */
 export const processSrtToVtt = async filePath => {
   try {
-    //  const srt = await processFile(filePath)
     const srt = fs.readFileSync(filePath, "utf8");
-    let fileName = path.basename(filePath, ".srt");
+    const fileName = path.basename(filePath, ".srt");
     const outputDir = await createDefaultOutputDir(filePath);
     const vtt = await processVTT(srt).then(async res => {
-      console.log(`res`, res);
-      await writeSubToFile(fileName, outputDir, res);
+      console.log(`Res from ProcessVTT: `, res);
+      await writeSubToFile(fileName, outputDir, res).then(() => {
+        console.log(`File successfully written to disc`);
+      });
     });
-    console.log(`VTT LOG`, vtt);
-
     return vtt;
   } catch (Error) {
     console.log(Error);
   }
 };
 
+/**
+ *
+ * @param {string} srt - srt content from fs.readFile
+ */
 const processVTT = srt => {
   return new Promise(async (resolve, reject) => {
     try {
-      let vtt = await srt2vtt(srt, async (err, vttData) => {
+      let vtt = await srt2vtt(srt, (err, vttData) => {
         if (err) throw new Error(err);
-        console.log(`vttdata from func `, vttData.toString("utf8"));
         let vttContent = vttData.toString("utf8");
-        console.log(`vttcontent`, vttContent);
         resolve(vttContent);
       });
       if (!vtt) reject(vtt);
-      console.log(vtt);
       return vtt;
     } catch (err) {
       if (err) console.log(err);
@@ -80,12 +80,10 @@ export const processFile = filePath => {
 export const writeSubToFile = (fileName, outputPath, subtitle) => {
   return new Promise(async (resolve, reject) => {
     try {
-      let fileAndExtension = fileName + ".vtt";
-      let file = path.join(outputPath, fileAndExtension);
-      console.log(`fileandExten`, fileAndExtension);
-      console.log(`subtitle content`, subtitle);
-      console.log(`WRITESUBTOFILE ${typeof file} `, file);
+      const fileAndExtension = fileName + ".vtt";
+      const file = path.join(outputPath, fileAndExtension);
       if (!subtitle) return "Subtitle is undefined";
+
       await fs.writeFile(file, subtitle, err => {
         if (err) console.log(err);
         resolve("File Successfully Written to disc");
