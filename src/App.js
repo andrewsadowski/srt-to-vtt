@@ -15,8 +15,8 @@ class App extends Component {
     this.setState({ files: fileArray }, async () => {
       if (this.state.files.length === 1) {
         console.log(this.state.files[0].path);
-        // await processSrtToVtt(this.state.files[0].path);
-        await processFile(this.state.files[0].path);
+        await processSrtToVtt(this.state.files[0].path);
+        // await processFile(this.state.files[0].path);
       } else {
         //loop over each file, calling processSrtToVtt()
       }
