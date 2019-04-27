@@ -1,6 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-const srt2vtt = require("srt2vtt");
+const fs = window.require("fs");
+const path = window.require("path");
+const srt2vtt = window.require("srt2vtt");
 
 /**
  * how to run srt2vtt lib
@@ -18,7 +18,7 @@ srt2vtt(srtData, function(err, vttData) {
 export const processSrtToVtt = async filePath => {
   try {
     //  const srt = await processFile(filePath)
-    const srt = fs.readFileSync(filePath);
+    const srt = fs.readFileSync(filePath, "utf8");
     const VTT = srt2vtt(srt, (err, vttData) => {
       if (err) throw new Error(err);
       console.log(vttData.toString());
@@ -39,6 +39,7 @@ export const processFile = filePath => {
     try {
       if (filePath) {
         const srt = fs.readFileSync(filePath);
+        console.log(srt);
         resolve(srt);
       }
     } catch (Error) {
