@@ -8,22 +8,27 @@ import { processSrtToVtt } from "./utils/handleSrt";
 
 class App extends Component {
   state = {
-    files: []
+    files: [],
+    hasDropOccurred: false
   };
 
   handleFiles = fileArray => {
-    this.setState({ files: fileArray }, async () => {
-      if (this.state.files.length === 1) {
-        console.log(this.state.files[0].path);
-        await processSrtToVtt(this.state.files[0].path);
-      } else {
-        this.state.files.map(async file => {
-          console.log(file.path);
-          await processSrtToVtt(file.path);
-        });
+    this.setState(
+      { files: fileArray, hasDropOccurred: !this.state.hasDropOccurred },
+      async () => {
+        console.log(this.state);
+        if (this.state.files.length === 1) {
+          console.log(this.state.files[0].path);
+          await processSrtToVtt(this.state.files[0].path);
+        } else {
+          this.state.files.map(async file => {
+            console.log(file.path);
+            await processSrtToVtt(file.path);
+          });
+        }
+        console.log(this.state.files);
       }
-      console.log(this.state.files);
-    });
+    );
   };
 
   render() {
