@@ -13,22 +13,26 @@ class App extends Component {
   };
 
   handleFiles = fileArray => {
-    this.setState(
-      { files: fileArray, hasDropOccurred: !this.state.hasDropOccurred },
-      async () => {
-        console.log(this.state);
-        if (this.state.files.length === 1) {
-          console.log(this.state.files[0].path);
-          await processSrtToVtt(this.state.files[0].path);
-        } else {
-          this.state.files.map(async file => {
-            console.log(file.path);
-            await processSrtToVtt(file.path);
-          });
+    try {
+      this.setState(
+        { files: fileArray, hasDropOccurred: !this.state.hasDropOccurred },
+        async () => {
+          if (this.state.files.length === 1) {
+            console.log(this.state.files[0].path);
+            await processSrtToVtt(this.state.files[0].path);
+          } else {
+            this.state.files.map(async file => {
+              console.log(file.path);
+              await processSrtToVtt(file.path);
+            });
+          }
         }
-        console.log(this.state.files);
-      }
-    );
+      );
+    } catch (err) {
+      if (err) console.log(err);
+    } finally {
+      this.setState({ hasDropOccurred: !this.state.hasDropOccurred });
+    }
   };
 
   render() {
