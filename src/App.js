@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Header from "./components/Header";
 import DragArea from "./components/DragArea";
 
-import { processSrtToVtt, processFile } from "./utils/handleSrt";
+import { processSrtToVtt } from "./utils/handleSrt";
 
 class App extends Component {
   state = {
@@ -16,7 +16,6 @@ class App extends Component {
       if (this.state.files.length === 1) {
         console.log(this.state.files[0].path);
         await processSrtToVtt(this.state.files[0].path);
-        // await processFile(this.state.files[0].path);
       } else {
         //loop over each file, calling processSrtToVtt()
       }
