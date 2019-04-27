@@ -19,12 +19,15 @@ export const processSrtToVtt = async filePath => {
   try {
     //  const srt = await processFile(filePath)
     const srt = fs.readFileSync(filePath, "utf8");
+    let fileName = path.basename(filePath, ".srt");
     const outputDir = await createDefaultOutputDir(filePath);
+
     console.log(outputDir);
-    const VTT = srt2vtt(srt, (err, vttData) => {
+    const VTT = srt2vtt(srt, async (err, vttData) => {
       if (err) throw new Error(err);
       console.log(vttData.toString());
     });
+    await writeSubToFile(fileName, outputDir, VTT);
     console.log(VTT);
     return VTT;
   } catch (Error) {
@@ -52,19 +55,27 @@ export const processFile = filePath => {
 
 /**
  *
- * @param {string} outputNameAndPath - Path and Name of output
+ * @param {string} outputPath - Path of output
+ * @param {string} fileName - Name of file (without extension)
  * @param {object} subtitle - Object consisting of updated subtitle file
+ * @param {string} extension - String with extension type
  */
-export const writeSubToFile = (outputNameAndPath, subtitle) => {
-  return new Promise((resolve, reject) => {
-    if (outputNameAndPath && subtitle) {
-      resolve(
-        fs.writeFile(outputNameAndPath, subtitle, err => {
-          if (err) return console.log(err);
-        })
-      );
-    } else {
-      reject(Error);
+export const writeSubToFile = (
+  fileName,
+  outputPath,
+  extension = ".vtt",
+  subtitle
+) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      let file = path.join(outputPath, fileName + extension);
+      console.log(`WRITESUBTOFILE ${typeof file} `, file);
+      await fs.writeFile(file, subtitle, err => {
+        if (err) console.log(err);
+        resolve("File Successfully Written to disc");
+      });
+    } catch (err) {
+      reject(err);
     }
   });
 };
@@ -96,14 +107,3 @@ export const createDefaultOutputDir = filePath => {
   }
   return path.join(dir, "VTT_Output");
 };
-
-// console.log(
-//   processSrtToVtt(
-//     "/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt"
-//   )
-// );
-console.log(
-  createDefaultOutputDir(
-    "/Users/andrewsadowski/dev/react-projects/srt-to-vtt/test.srt"
-  )
-);
