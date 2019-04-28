@@ -11,10 +11,7 @@ export default class DragArea extends Component {
         <Dropzone
           onDrop={files => this.props.handleFiles(files)}
           render={({ canDrop, isOver }) => (
-            <DropZoneContainer>
-              Drop file here
-              <pre>{JSON.stringify({ canDrop, isOver })}</pre>
-            </DropZoneContainer>
+            <DropZoneContainer>{this.props.children}</DropZoneContainer>
           )}
         />
       </DropContainer>
@@ -25,7 +22,7 @@ export default class DragArea extends Component {
 const DropContainer = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: whitesmoke;
+  background-color: white;
 `;
 
 const DropZoneContainer = styled.div`

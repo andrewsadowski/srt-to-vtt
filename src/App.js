@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import Header from "./components/Header";
 import DragArea from "./components/DragArea";
+import AtRest from "./components/AtRest";
+import Dropped from "./components/Dropped";
 
 import { processSrtToVtt } from "./utils/handleSrt";
 
@@ -30,16 +32,17 @@ class App extends Component {
       );
     } catch (err) {
       if (err) console.log(err);
-    } finally {
-      this.setState({ hasDropOccurred: !this.state.hasDropOccurred });
     }
   };
 
   render() {
+    let { hasDropOccurred } = this.state;
     return (
       <AppContainer>
         <Header />
-        <DragArea handleFiles={this.handleFiles} />
+        <DragArea handleFiles={this.handleFiles}>
+          {hasDropOccurred ? <Dropped /> : <AtRest />}
+        </DragArea>
       </AppContainer>
     );
   }
