@@ -35,6 +35,7 @@ const BoxContainer = styled.div`
 const BoxText = styled.p`
   justify-content: center;
   font-family: "Exo", sans-serif;
+  align-content: center;
   text-align: center;
 `;
 
