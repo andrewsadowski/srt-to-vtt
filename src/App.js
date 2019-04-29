@@ -41,7 +41,11 @@ class App extends Component {
       <AppContainer>
         <Header />
         <DragArea handleFiles={this.handleFiles}>
-          {hasDropOccurred ? <Dropped /> : <AtRest />}
+          {hasDropOccurred ? (
+            <Dropped dropped={this.state.hasDropOccurred} />
+          ) : (
+            <AtRest />
+          )}
         </DragArea>
       </AppContainer>
     );
