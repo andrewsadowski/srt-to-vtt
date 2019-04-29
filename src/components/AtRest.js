@@ -3,10 +3,19 @@ import styled from "styled-components";
 import posed from "react-pose";
 
 export default class AtRest extends Component {
+  state = {
+    hovering: false
+  };
+  mouseOver = () =>
+    this.setState({ hovering: true }, () => console.log(this.props));
+  mouseOut = () => this.setState({ hovering: false });
   render() {
+    const { dropped } = this.props;
     return (
-      <BoxContainer>
-        <Box />
+      <BoxContainer onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+        <Box pose={!this.state.hovering && !dropped ? "visible" : "hidden"}>
+          <BoxText>Drop some srts here</BoxText>
+        </Box>
       </BoxContainer>
     );
   }
@@ -23,9 +32,14 @@ const BoxContainer = styled.div`
   margin: 0;
 `;
 
+const BoxText = styled.p`
+  justify-content: center;
+  text-align: center;
+`;
+
 const BoxOutline = posed.div({
   visible: { opacity: 1 },
-  hidden: { opacity: 0 }
+  hidden: { opacity: 0.2 }
 });
 
 const Box = styled(BoxOutline)`
