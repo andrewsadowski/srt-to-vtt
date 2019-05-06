@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.div`
   display: flex;
+  z-index: 1000;
 `;
 
 const HeaderText = styled.h1`
