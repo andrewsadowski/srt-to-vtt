@@ -16,3 +16,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.checkout {
+  position: fixed;
+  border-color: black;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+}
+.checkout-left {
+  width: 30%;
+  height: 100vh;
+  background: black;
+}
+.checkout-right {
+  width: 70%;
+  height: 100vh;
+  background: grey;
+}
