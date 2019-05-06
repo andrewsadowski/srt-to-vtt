@@ -27,6 +27,7 @@ const OnDrop = ({ dropped, files }) => {
             }}
             className="checkout-right"
           >
+            <FileHeader />
             {files.map(file => (
               <File key={file.lastModified}>{file.name}</File>
             ))}
@@ -72,6 +73,10 @@ const File = styled.p`
   text-align: center;
   flex-direction: column;
   justify-self: center;
+`;
+
+const FileHeader = styled.h1`
+  font-family: "Exo", sans-serif;
 `;
 
 const DroppedLeft = styled(animated.div)`
