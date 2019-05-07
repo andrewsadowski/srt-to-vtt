@@ -2,6 +2,8 @@ import React from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 
+import AtRest from "./AtRest";
+
 const OnDrop = ({ dropped, files }) => {
   const { x } = useSpring({
     x: dropped ? 0 : 100
@@ -34,7 +36,7 @@ const OnDrop = ({ dropped, files }) => {
           </DroppedRight>
         </DroppedContainer>
       ) : (
-        <div>Drop Somthing</div>
+        <AtRest />
       )}
     </>
   );
