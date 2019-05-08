@@ -7,7 +7,6 @@ import AtRest from "./AtRest";
 const OnDrop = ({ dropped, files }) => {
   const { x } = useSpring({
     x: dropped ? 0 : 100
-    // transform: isOpen ? `translate3d(0, 0, 0)` : `translate3d(100%, 0, 0)`
   });
 
   return (
