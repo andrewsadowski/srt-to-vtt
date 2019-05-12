@@ -13,7 +13,7 @@ export default class AtRest extends Component {
     const { dropped } = this.props;
     return (
       <BoxContainer onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-        <Box pose={!this.state.hovering && !dropped ? "visible" : "hidden"}>
+        <Box pose={!this.state.hovering && !dropped ? "notOver" : "over"}>
           <BoxText>Drop some srts here</BoxText>
         </Box>
       </BoxContainer>
@@ -40,14 +40,14 @@ const BoxText = styled.p`
 `;
 
 const BoxOutline = posed.div({
-  visible: { opacity: 1 },
-  hidden: { opacity: 0.2 }
+  over: { borderWidth: "2px" },
+  notOver: { borderWidth: "1px" }
 });
 
 const Box = styled(BoxOutline)`
   width: 85vw;
   height: 75vh;
   background: #ff1c68;
-  border: 1px solid black;
+  border: 1px dashed black;
   transform-origin: 50% 50%;
 `;
