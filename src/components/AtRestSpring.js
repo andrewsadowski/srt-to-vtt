@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { useSpring, animated } from "react-spring";
+import { Spring, animated } from "react-spring";
 import styled from "styled-components";
 
 export default class AtRest extends Component {
@@ -44,12 +44,12 @@ const BoxText = styled.p`
   text-align: center;
 `;
 
-const BoxOutline = posed.div({
-  over: { borderWidth: "2px" },
-  notOver: { borderWidth: "1px", color: "blue" }
-});
+// const BoxOutline = posed.div({
+//   over: { borderWidth: "2px" },
+//   notOver: { borderWidth: "1px", color: "blue" }
+// });
 
-const Box = styled.div`
+const Box = styled(animated.div)`
   width: 85vw;
   height: 75vh;
   background: #ff1c68;
