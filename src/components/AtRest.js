@@ -41,7 +41,7 @@ const BoxText = styled.p`
 
 const BoxOutline = posed.div({
   over: { borderWidth: "2px" },
-  notOver: { borderWidth: "1px" }
+  notOver: { borderWidth: "1px", color: "blue" }
 });
 
 const Box = styled(BoxOutline)`
