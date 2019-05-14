@@ -14,12 +14,13 @@ export default class AtRest extends Component {
 
   render() {
     const { dropped } = this.props;
+    const { hovering } = this.state;
     return (
       <BoxContainer onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
         <Spring
           to={{
-            borderWidth: dropped ? "1px" : "1.5px",
-            color: dropped ? "black" : "blue"
+            borderWidth: hovering && !dropped ? "1px" : "1.5px",
+            color: hovering && !dropped ? "black" : "blue"
           }}
         >
           {styles => (
