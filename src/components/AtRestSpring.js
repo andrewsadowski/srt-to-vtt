@@ -16,10 +16,17 @@ export default class AtRest extends Component {
     const { dropped } = this.props;
     return (
       <BoxContainer onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-        <Spring>
-          <Box>
-            <BoxText>Drop some srts here</BoxText>
-          </Box>
+        <Spring
+          to={{
+            borderWidth: dropped ? "1px" : "1.5px",
+            color: dropped ? "black" : "blue"
+          }}
+        >
+          {styles => (
+            <Box style={styles}>
+              <BoxText>Drop some srts here</BoxText>
+            </Box>
+          )}
         </Spring>
       </BoxContainer>
     );
