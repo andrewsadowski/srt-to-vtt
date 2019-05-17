@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Spring, animated } from "react-spring";
+import { Spring, animated } from "react-spring/renderprops";
 import styled from "styled-components";
 
 export default class AtRest extends Component {
