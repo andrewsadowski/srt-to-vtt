@@ -3,9 +3,6 @@ import styled from "styled-components";
 
 import Header from "./components/Header";
 import DragArea from "./components/DragArea";
-import AtRest from "./components/AtRest";
-import AtRestSpring from "./components/AtRestSpring";
-import Dropped from "./components/Dropped";
 import OnDrop from "./components/OnDrop";
 
 import { processSrtToVtt } from "./utils/handleSrt";
