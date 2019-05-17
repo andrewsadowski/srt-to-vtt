@@ -2,7 +2,7 @@ import React from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 
-import AtRest from "./AtRest";
+import AtRestSpring from "./AtRestSpring";
 
 const OnDrop = ({ dropped, files }) => {
   const { x } = useSpring({
@@ -35,7 +35,7 @@ const OnDrop = ({ dropped, files }) => {
           </DroppedRight>
         </DroppedContainer>
       ) : (
-        <AtRest />
+        <AtRestSpring />
       )}
     </>
   );
