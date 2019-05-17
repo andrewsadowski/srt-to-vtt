@@ -52,11 +52,6 @@ const BoxText = styled.p`
   text-align: center;
 `;
 
-// const BoxOutline = posed.div({
-//   over: { borderWidth: "2px" },
-//   notOver: { borderWidth: "1px", color: "blue" }
-// });
-
 const Box = styled(animated.div)`
   width: 85vw;
   height: 75vh;
@@ -64,7 +59,3 @@ const Box = styled(animated.div)`
   border: 1px dashed black;
   transform-origin: 50% 50%;
 `;
-
-/**
- * pose={!this.state.hovering && !dropped ? "notOver" : "over"}
- */
