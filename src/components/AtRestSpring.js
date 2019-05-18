@@ -26,7 +26,7 @@ export default class AtRest extends Component {
           {styles => (
             <Box style={styles}>
               <BoxText>Drop some srts here</BoxText>
-              {hovering ? <animated.h1>Give it a drop</animated.h1> : null}
+              {hovering ? <DropNote>Give it a drop</DropNote> : null}
             </Box>
           )}
         </Spring>
@@ -59,4 +59,14 @@ const Box = styled(animated.div)`
   background: #ff1c68;
   border: 1px dashed black;
   transform-origin: 50% 50%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const DropNote = styled(animated.p)`
+  justify-content: center;
+  font-family: "Exo", sans-serif;
+  align-content: center;
+  text-align: center;
+  font-size: 50px;
 `;
