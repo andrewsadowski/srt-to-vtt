@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import AtRestSpring from "./AtRestSpring";
 import FileCard from "./FileCard";
+import RefreshButton from "./RefreshButton";
 
 const OnDrop = ({ dropped, files }) => {
   const { x } = useSpring({
@@ -33,6 +34,7 @@ const OnDrop = ({ dropped, files }) => {
             {files.map(file => (
               <FileCard key={file.lastModified} name={file.name} />
             ))}
+            <RefreshButton />
           </DroppedRight>
         </DroppedContainer>
       ) : (
