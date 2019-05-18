@@ -56,7 +56,7 @@ const BoxText = styled.p`
 const Box = styled(animated.div)`
   width: 85vw;
   height: 75vh;
-  background: #ff1c68;
+  background: #edeae8;
   border: 1px dashed black;
   transform-origin: 50% 50%;
   justify-content: center;
@@ -68,5 +68,5 @@ const DropNote = styled(animated.p)`
   font-family: "Exo", sans-serif;
   align-content: center;
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
 `;
