@@ -3,6 +3,7 @@ import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 
 import AtRestSpring from "./AtRestSpring";
+import FileCard from "./FileCard";
 
 const OnDrop = ({ dropped, files }) => {
   const { x } = useSpring({
@@ -30,7 +31,7 @@ const OnDrop = ({ dropped, files }) => {
           >
             <FileHeader />
             {files.map(file => (
-              <File key={file.lastModified}>{file.name}</File>
+              <FileCard key={file.lastModified} name={file.name} />
             ))}
           </DroppedRight>
         </DroppedContainer>
