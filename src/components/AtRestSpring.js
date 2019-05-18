@@ -19,13 +19,14 @@ export default class AtRest extends Component {
       <BoxContainer onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
         <Spring
           to={{
-            borderWidth: hovering && !dropped ? "1px" : "2px",
-            color: hovering && !dropped ? "black" : "blue"
+            borderWidth: hovering && !dropped ? "2px" : "1px",
+            color: hovering && !dropped ? "blue" : "black"
           }}
         >
           {styles => (
             <Box style={styles}>
               <BoxText>Drop some srts here</BoxText>
+              {hovering ? <animated.h1>Give it a drop</animated.h1> : null}
             </Box>
           )}
         </Spring>
