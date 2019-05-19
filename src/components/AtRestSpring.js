@@ -10,13 +10,15 @@ export default class AtRest extends Component {
   mouseOver = () =>
     this.setState({ hovering: true }, () => console.log(this.props));
 
-  mouseOut = () => this.setState({ hovering: false });
+  mouseLeave = () => {
+    this.setState({ hovering: false });
+  };
 
   render() {
     const { dropped } = this.props;
     const { hovering } = this.state;
     return (
-      <BoxContainer onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+      <BoxContainer onMouseLeave={this.mouseLeave} onMouseOver={this.mouseOver}>
         <Spring
           to={{
             borderWidth: hovering && !dropped ? "3px" : "1px",
@@ -26,7 +28,7 @@ export default class AtRest extends Component {
           {styles => (
             <Box style={styles}>
               <BoxText>Drop some srts here</BoxText>
-              {hovering ? <DropNote>Give it a drop</DropNote> : null}
+              {hovering && <DropNote>Give it a drop</DropNote>}
             </Box>
           )}
         </Spring>
