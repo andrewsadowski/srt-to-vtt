@@ -73,12 +73,6 @@ const DroppedRight = styled(animated.div)`
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
 
-const File = styled.p`
-  text-align: center;
-  flex-direction: column;
-  justify-self: center;
-`;
-
 const FileHeader = styled.h1`
   font-family: "Exo", sans-serif;
 `;
