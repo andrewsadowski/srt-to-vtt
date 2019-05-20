@@ -28,7 +28,7 @@ export default class AtRest extends Component {
           {styles => (
             <Box style={styles}>
               <BoxText>Drop some srts here</BoxText>
-              {hovering && <DropNote>Give it a drop</DropNote>}
+              {hovering && <DropNote>Drop your files here</DropNote>}
             </Box>
           )}
         </Spring>
@@ -70,5 +70,5 @@ const DropNote = styled(animated.p)`
   font-family: "Exo", sans-serif;
   align-content: center;
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
 `;
