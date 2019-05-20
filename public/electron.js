@@ -14,7 +14,8 @@ function createWindow() {
     height: 445,
     titleBarStyle: "hidden",
     resizable: false,
-    frame: false
+    frame: false,
+    show: false
   });
   mainWindow.loadURL(
     isDev
@@ -22,6 +23,7 @@ function createWindow() {
       : `file://${path.join(__dirname, "../build/index.html")}`
   );
   mainWindow.on("closed", () => (mainWindow = null));
+  mainWindow.once("ready-to-show", () => mainWindow.show());
 }
 
 app.on("ready", createWindow);
