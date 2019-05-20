@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Spring, animated } from "react-spring/renderprops";
 import styled from "styled-components";
 
+import Triangle from "./DropAnimation";
+
 export default class AtRest extends Component {
   state = {
     hovering: false
@@ -28,7 +30,12 @@ export default class AtRest extends Component {
           {styles => (
             <Box style={styles}>
               <BoxText>Drop some srts here</BoxText>
-              {hovering && <DropNote>Drop your files here</DropNote>}
+              {hovering && (
+                <HoverArea>
+                  <DropNote>Drop your files here</DropNote>
+                  <Triangle />
+                </HoverArea>
+              )}
             </Box>
           )}
         </Spring>
@@ -71,4 +78,11 @@ const DropNote = styled(animated.p)`
   align-content: center;
   text-align: center;
   font-size: 35px;
+`;
+
+const HoverArea = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 `;
