@@ -10,7 +10,7 @@ const OnDrop = ({ dropped, files }) => {
   const { x } = useSpring({
     x: dropped ? 0 : 100
   });
-
+  console.log(files);
   return (
     <>
       {dropped ? (
@@ -32,7 +32,11 @@ const OnDrop = ({ dropped, files }) => {
           >
             <FileHeader />
             {files.map(file => (
-              <FileCard key={file.lastModified} name={file.name} />
+              <FileCard
+                key={file.lastModified}
+                path={file.path}
+                name={file.name}
+              />
             ))}
             <RefreshButton />
           </DroppedRight>
