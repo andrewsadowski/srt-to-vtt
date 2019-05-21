@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Spring, animated } from "react-spring/renderprops";
 import styled from "styled-components";
 
-import Triangle from "./DropAnimation";
+import DropAnimation from "./DropAnimation";
 
 export default class AtRest extends Component {
   state = {
@@ -33,7 +33,7 @@ export default class AtRest extends Component {
               {hovering && (
                 <HoverArea>
                   <DropNote>Drop your files here</DropNote>
-                  <Triangle />
+                  <DropAnimation hovered={hovering} />
                 </HoverArea>
               )}
             </Box>
