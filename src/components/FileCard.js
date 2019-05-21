@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { useSpring, animated } from "react-spring";
 
-const FileCard = ({ name }) => {
+const FileCard = ({ name, path }) => {
   return (
     <FileCardContainer>
       <FileName>{name}</FileName>
@@ -11,7 +12,7 @@ const FileCard = ({ name }) => {
 
 const FileCardContainer = styled.div`
   height: 15vh;
-  width: 25vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -30,6 +31,10 @@ const FileCardContainer = styled.div`
 `;
 
 const FileName = styled.p`
+  font-family: "Exo", sans-serif;
+  text-align: center;
+`;
+const FilePath = styled.p`
   font-family: "Exo", sans-serif;
   text-align: center;
 `;
