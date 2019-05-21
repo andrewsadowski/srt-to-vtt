@@ -19,9 +19,21 @@ export default class RefreshButton extends Component {
   render() {
     return (
       <ButtonContainer onClick={this.refreshWindow}>
-        <ParticleEffectButton color="#121019" hidden={this.state.hidden}>
+        <StyledButton
+          color="#121019"
+          style={{
+            background: "#121019",
+            color: "#fff",
+            padding: "1.5rem 3rem",
+            border: "0",
+            borderRadius: 5,
+            cursor: "pointer",
+            fontSize: "1.2em"
+          }}
+          hidden={this.state.hidden}
+        >
           Refresh
-        </ParticleEffectButton>
+        </StyledButton>
       </ButtonContainer>
     );
   }
@@ -31,5 +43,16 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  color: "#121019";
+  background: "#121019";
+  color: "#fff";
+  padding: "1.5rem 3rem";
+  border: "0";
+  border-radius: 5;
+  font-size: "1.2em";
+`;
+
+const StyledButton = styled(ParticleEffectButton)`
+  border: 1px solid black;
+  width: 20px;
+  height: 25px;
 `;
