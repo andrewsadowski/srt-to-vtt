@@ -12,11 +12,12 @@ const FileCard = ({ name, path }) => {
 
 const FileCardContainer = styled.div`
   height: 15vh;
-  width: 100%;
+  width: 75%;
   display: flex;
   justify-content: center;
   align-content: center;
-  border-radius: 10%;
+  border-radius: 30px;
+  margin-bottom: 10px;
   background-color: #cb2d3e; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -34,9 +35,9 @@ const FileName = styled.p`
   font-family: "Exo", sans-serif;
   text-align: center;
 `;
-const FilePath = styled.p`
-  font-family: "Exo", sans-serif;
-  text-align: center;
-`;
+// const FilePath = styled.p`
+//   font-family: "Exo", sans-serif;
+//   text-align: center;
+// `;
 
 export default FileCard;
