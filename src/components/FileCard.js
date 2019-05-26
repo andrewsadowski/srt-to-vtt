@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
+// TODO Make sure that VTT extension is shown to user, not srt
 const FileCard = ({ name, path }) => {
   const [on, setOn] = useState(false);
   const animation = useSpring({
