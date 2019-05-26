@@ -9,8 +9,7 @@ export default class AtRest extends Component {
     hovering: false
   };
 
-  mouseOver = () =>
-    this.setState({ hovering: true }, () => console.log(this.props));
+  mouseOver = () => this.setState({ hovering: true });
 
   mouseLeave = () => {
     this.setState({ hovering: false });
@@ -24,13 +23,17 @@ export default class AtRest extends Component {
         <Spring
           to={{
             borderWidth: hovering && !dropped ? "3px" : "1px",
-            color: hovering && !dropped ? "blue" : "black",
-            x: hovering ? "rgba(127,219,255,1)" : "#edeae8"
+            color: hovering && !dropped ? "#0074D9" : "black",
+            x: hovering ? "#DDDDDD" : "#edeae8",
+            y: hovering ? "30px" : "18px",
+            borderColor: hovering ? "#0074D9" : "#111111"
           }}
         >
           {styles => (
             <Box style={{ ...styles, background: styles.x }}>
-              <BoxText>Drop some srts here</BoxText>
+              <BoxText style={{ fontSize: styles.y }}>
+                Drop some srts here
+              </BoxText>
               {hovering && (
                 <HoverArea>
                   {/* <DropNote>Drop your files here</DropNote> */}
@@ -44,6 +47,7 @@ export default class AtRest extends Component {
     );
   }
 }
+// background-image: linear-gradient( 0.2deg,  rgba(79,104,112,1) -13.8%, rgba(177,234,252,1) 100.2% );
 
 const BoxContainer = styled.div`
   display: flex;
