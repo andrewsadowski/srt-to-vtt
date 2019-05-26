@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
 const FileCard = ({ name, path }) => {
+  const [on, setOn] = useState(false);
   return (
-    <FileCardContainer>
+    <FileCardContainer
+      onMouseLeave={() => setOn(false)}
+      onMouseOver={() => setOn(true)}
+    >
       <FileName>{name}</FileName>
     </FileCardContainer>
   );
