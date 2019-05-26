@@ -18,12 +18,6 @@ const OnDrop = ({ dropped, files }) => {
           className="checkout"
           style={{ pointerEvents: dropped ? "all" : "none" }}
         >
-          <DroppedLeft
-            style={{
-              transform: x.interpolate(x => `translate3d(${x * -1}%, 0, 0)`)
-            }}
-            className="checkout-left"
-          />
           <DroppedRight
             style={{
               transform: x.interpolate(x => `translate3d(${x}%, 0, 0)`)
@@ -58,7 +52,7 @@ const DroppedContainer = styled.div`
 `;
 
 const DroppedRight = styled(animated.div)`
-  width: 70%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -79,22 +73,6 @@ const DroppedRight = styled(animated.div)`
 
 const FileHeader = styled.h1`
   font-family: "Exo", sans-serif;
-`;
-
-const DroppedLeft = styled(animated.div)`
-  width: 30%;
-  height: 100%;
-  background: #e6dada; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #274046,
-    #e6dada
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #274046,
-    #e6dada
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
 
 export default OnDrop;
