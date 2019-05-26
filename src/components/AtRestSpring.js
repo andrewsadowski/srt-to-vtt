@@ -24,16 +24,17 @@ export default class AtRest extends Component {
         <Spring
           to={{
             borderWidth: hovering && !dropped ? "3px" : "1px",
-            color: hovering && !dropped ? "blue" : "black"
+            color: hovering && !dropped ? "blue" : "black",
+            x: hovering ? "rgba(127,219,255,1)" : "#edeae8"
           }}
         >
           {styles => (
-            <Box style={styles}>
+            <Box style={{ ...styles, background: styles.x }}>
               <BoxText>Drop some srts here</BoxText>
               {hovering && (
                 <HoverArea>
-                  <DropNote>Drop your files here</DropNote>
-                  <DropAnimation hovered={hovering} />
+                  {/* <DropNote>Drop your files here</DropNote> */}
+                  {/* <DropAnimation hovered={hovering} /> */}
                 </HoverArea>
               )}
             </Box>
