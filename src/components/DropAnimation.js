@@ -37,5 +37,3 @@ const Triangle = styled(animated.div)`
 `;
 
 export default DropAnimation;
-
-// notes mass high so that we have bounce
