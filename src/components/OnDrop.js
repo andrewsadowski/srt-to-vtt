@@ -24,7 +24,9 @@ const OnDrop = ({ dropped, files }) => {
             }}
             className="checkout-right"
           >
-            <FileHeader />
+            <FileHeader>
+              Click on a file to open it in your file explorer
+            </FileHeader>
             {files.map(file => (
               <FileCard
                 key={file.lastModified}
@@ -71,8 +73,9 @@ const DroppedRight = styled(animated.div)`
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
 
-const FileHeader = styled.h1`
+const FileHeader = styled.p`
   font-family: "Exo", sans-serif;
+  font-size: "10px";
 `;
 
 export default OnDrop;
