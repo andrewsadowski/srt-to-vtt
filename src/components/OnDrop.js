@@ -25,15 +25,19 @@ const OnDrop = ({ dropped, files }) => {
             className="checkout-right"
           >
             <FileHeader>
-              Click on a file to open it in your file explorer
+              {files.length > 4
+                ? `Check the created VTT directory for your files`
+                : `Click on a file to open it in your file explorer`}
             </FileHeader>
-            {files.map(file => (
-              <FileCard
-                key={file.lastModified}
-                path={file.path}
-                name={file.name}
-              />
-            ))}
+            {files.length > 4
+              ? null
+              : files.map(file => (
+                  <FileCard
+                    key={file.lastModified}
+                    path={file.path}
+                    name={file.name}
+                  />
+                ))}
             <RefreshButton />
           </DroppedRight>
         </DroppedContainer>
