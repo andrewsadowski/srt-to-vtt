@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { getCurrentWindow } from "electron";
 import styled from "styled-components";
 import ParticleEffectButton from "react-particle-effect-button";
 
@@ -44,7 +43,8 @@ const StyledButton = styled(ParticleEffectButton)`
   border: 1px solid black;
   width: 100px;
   height: 50px;
-
+  text-align: center;
+  border-radius: 5%;
   align-self: center;
   justify-self: center;
 `;
