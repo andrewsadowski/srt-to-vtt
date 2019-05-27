@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
+// import { shell } from "electron";
+const { shell } = window.require("electron").remote;
 
 const FileCard = ({ name, path }) => {
   const [on, setOn] = useState(false);
@@ -18,6 +20,7 @@ const FileCard = ({ name, path }) => {
   return (
     <FileCardContainer
       style={animation}
+      onClick={() => shell.showItemInFolder(path)}
       onMouseLeave={() => setOn(false)}
       onMouseOver={() => setOn(true)}
     >
