@@ -112,3 +112,7 @@ export const createDefaultOutputDir = filePath => {
   }
   return path.join(dir, "VTT_Output");
 };
+
+export const returnFileAndDir = (filePath, fileName) => {
+  return path.join(filePath, fileName);
+};
