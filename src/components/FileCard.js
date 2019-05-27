@@ -2,19 +2,26 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
-// TODO Make sure that VTT extension is shown to user, not srt
 const FileCard = ({ name, path }) => {
   const [on, setOn] = useState(false);
   const animation = useSpring({
     backgroundColor: on ? "#ffdc00" : "#8e9eab"
   });
+
+  const fileName = name => {
+    let file = name.split(".");
+    file = file[0] + ".vtt";
+    console.log(file);
+    return file;
+  };
+
   return (
     <FileCardContainer
       style={animation}
       onMouseLeave={() => setOn(false)}
       onMouseOver={() => setOn(true)}
     >
-      <FileName>{name}</FileName>
+      <FileName>{fileName(name)}</FileName>
     </FileCardContainer>
   );
 };
