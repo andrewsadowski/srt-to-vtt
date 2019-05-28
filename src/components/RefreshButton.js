@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import ParticleEffectButton from "react-particle-effect-button";
 
 const { getCurrentWindow } = window.require("electron").remote;
 
@@ -11,40 +10,20 @@ export default class RefreshButton extends Component {
 
   refreshWindow = () => {
     this.setState({ hidden: !this.state.hidden }, () => {
-      setTimeout(() => getCurrentWindow().reload(), 2000);
+      getCurrentWindow().reload();
     });
   };
 
   render() {
-    return (
-      <ButtonContainer onClick={this.refreshWindow}>
-        <StyledButton color="#121019" hidden={this.state.hidden}>
-          Refresh
-        </StyledButton>
-      </ButtonContainer>
-    );
+    return <ButtonStyled onClick={this.refreshWindow}>Refresh</ButtonStyled>;
   }
 }
 
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: "#121019";
-  color: "#fff";
-  padding: "1.5rem 3rem";
-  border: "0";
-  border-radius: 5;
-  font-size: "1.2em";
-`;
-
-const StyledButton = styled(ParticleEffectButton)`
-  border: 1px solid black;
-  width: 100px;
-  height: 50px;
-  text-align: center;
-  border-radius: 5%;
-  align-self: center;
-  justify-self: center;
+const ButtonStyled = styled.button`
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid #001f3f;
+  border-radius: 3px;
+  background: #8e9eab;
 `;
