@@ -2,6 +2,25 @@
   "name": "srt-to-vtt",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Andrew Sadowski",
+    "email": "andrew.n.sadowski@gmail.com"
+  },
+  "build": {
+    "appId": "com.srtToVtt",
+    "productName": "SrtToVtt",
+    "copyright": "Copyright © 2019 ${author}",
+    "mac": {
+      "category": "com.electron.srtToVtt"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "dependencies": {
     "electron-is-dev": "^1.0.1",
     "react": "^16.8.3",
