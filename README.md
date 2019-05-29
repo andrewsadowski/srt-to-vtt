@@ -4,7 +4,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/andrewsadowski/srt-to-vtt/releases/download/1.0/SrtToVtt-1.0.dmg">
-  <img src="https://img.shields.io/badge/MacOS-v.1.1-brightgreen.svg?style=flat-square" alt="MacOS dmg file" />
+  <img src="https://img.shields.io/badge/MacOS-v.1.0-brightgreen.svg?style=flat-square" alt="MacOS dmg file" />
   </a>
 </p>
 
