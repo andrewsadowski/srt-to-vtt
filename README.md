@@ -18,4 +18,4 @@ This Electron app converts as many SRTs into VTTs as you need. It creates a VTT_
 
 ### Running Application
 
-Open the application, drag the srt you want processed into the window. The VTT files will be in the same directory as your provided SRT files, in a VTT_Output folder. The files will be named identically to their SRT counterparts.
+Open the application, drag the srt(s) you want processed into the drag area within the window. The VTT files will be created in the same directory as your provided SRT files, in a VTT_Output folder. The files will be named identically to their SRT counterparts. Enjoy!
