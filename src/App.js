@@ -30,7 +30,7 @@ class App extends Component {
         }
       );
     } catch (err) {
-      if (err) console.log(err);
+      console.log("Error encountered while handling files: ", err);
     }
   };
 
