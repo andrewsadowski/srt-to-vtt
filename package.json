@@ -19,6 +19,7 @@
     ]
   },
   "dependencies": {
+    "electron-google-analytics": "^0.1.0",
     "electron-is-dev": "^1.0.1",
     "react": "^16.8.3",
     "react-dnd": "^7.0.2",
