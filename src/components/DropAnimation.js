@@ -9,7 +9,7 @@ const DropAnimation = ({ hovered }) => {
     leave: { opacity: 1, marginTop: "-40px" },
     config: { mass: 15, tension: 370, friction: 30 }
   });
-  console.log(hovered);
+
   return (
     <Container>
       {animation.map(
